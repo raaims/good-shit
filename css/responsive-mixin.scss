@@ -1,0 +1,20 @@
+@mixin response($property, $desktop, $tablet, $phone) {
+  & {
+    // Mobile first
+    #{$property}: $phone;
+  }
+
+  // Tablets
+  @media (min-width: 768px) {
+    & {
+      #{$property}: $tablet;
+    }
+  }
+
+  // Desktop
+  @media (min-width: 1280px) {
+    & {
+      #{$property}: $desktop;
+    }
+  }
+}
